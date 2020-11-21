@@ -1,0 +1,66 @@
+
+.username {
+    font-size: 3.5rem;
+    border: 2px #E1E8ED solid;
+    color: #14171A;
+    text-align: center;
+    padding: 10px;
+}
+
+.profile-pic {
+    display: block;
+    margin: 2em auto 2em;
+    width: 13em;
+    height: 13em;
+}
+
+.container-lists {
+    margin-right: 5em;
+    margin-left: 5em;
+}
+
+div.col h4 {
+    text-align: center;
+    color: red;
+}
+
+.row {
+    margin: 4em auto 4em;
+}
+
+.col {
+    color: #2a49a5;
+    padding: 10px;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+.hashtag-img {
+    margin: 3em auto 3em 5em;
+    max-width: 50%;
+    height: auto;
+}
+
+.topic-img {
+    margin: 3em auto 3em 5em;
+    max-width: 30%;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 5em;
+}
+
+.hash-topics-item {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+
+.hashtag {
+    color: #1DA1F2;
+}
+
+.topic {
+    color: #1DA1F2;
+}
