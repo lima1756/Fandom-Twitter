@@ -26,15 +26,49 @@ print("Got the hashtags . . .")
 
 # Listener class
 class StreamListener(StreamListener):
-    def __init__(self, api= None):
+    def __init__(self, api=None):
         self.api = api
-        csvFile = open("tweetsData", 'w')
+        csvFile = open("tweetsData2", 'w')
         print("Created the cvs . . .", end=" ")
         csvWriter = csv.writer(csvFile)
+        csvWriter.writerow(['text',
+                            'created_at',
+                            'geo',
+                            'lang',
+                            'place',
+                            'coordinates',
+                            'user.favouritesCount',
+                            'user.statusesCount',
+                            'user.description',
+                            'user.location',
+                            'user.id',
+                            'user.createdAt',
+                            'user.verified',
+                            'user.following',
+                            'user.url',
+                            'user.listedCount',
+                            'user.followersCount',
+                            'user.defaultProfileImage',
+                            'user.utcOffset',
+                            'user.friendsCount',
+                            'user.defaultProfile',
+                            'user.name',
+                            'user.lang',
+                            'user.screenName',
+                            'user.geoEnabled',
+                            'user.profileBackgroundColor',
+                            'user.profileImageUrl',
+                            'user.timeZone',
+                            'id',
+                            'favoriteCount',
+                            'retweeted',
+                            'source',
+                            'favorited',
+                            'retweetCount'])
 
     def on_status(self, status):
         print("Collecting tweets . . .", end=" ")
-        csvFile = open("tweetsData", 'a')
+        csvFile = open("tweetsData2", 'a')
         csvWriter = csv.writer(csvFile)
         if not 'RT @' in status.text:
             try:
@@ -100,6 +134,7 @@ class StreamListener(StreamListener):
         print("Rate limited . . . ")
         return True
 
+
 # Getting the tweets
 def getTweets(hashtags):
     auth = OAuthHandler(APIkey, APIsecretkey)
@@ -111,5 +146,6 @@ def getTweets(hashtags):
             stream.filter(track=hashtags)
         except:
             continue
+
 
 #getTweets(hashtags)
