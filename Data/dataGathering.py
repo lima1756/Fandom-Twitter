@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler, Stream
+from database import obtainHashTags
 import os
 import requests
 import json
@@ -14,6 +15,9 @@ APIkey = os.getenv('APIkey')
 APIsecretkey = os.getenv('APIsecretkey')
 AccessToken = os.getenv("AccessToken")
 AccessTokenSecret = os.getenv("AccessTokenSecret")
+
+# Obtain hashtags from database
+hashTagsDatabase = obtainHashTags()
 
 # Getting the hashtags
 hashtagsData = requests.get('https://estefaniajim.github.io/Fandom-Twitter/Data/Hashtags.json')
