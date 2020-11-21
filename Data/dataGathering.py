@@ -152,4 +152,4 @@ def getTweets(hashtags):
             continue
 
 
-#getTweets(hashtags)
+getTweets(hashTagsDatabase)
