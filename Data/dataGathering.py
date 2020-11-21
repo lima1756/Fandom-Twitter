@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler, Stream
-from database import obtainHashTags
+from .database import obtainHashTags
 import os
 import requests
 import json
