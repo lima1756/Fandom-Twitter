@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler, Stream
-from .database import obtainHashTags
+from database import obtainHashTags
 import os
 import requests
 import json
@@ -32,7 +32,7 @@ print("Got the hashtags . . .")
 class StreamListener(StreamListener):
     def __init__(self, api=None):
         self.api = api
-        csvFile = open("tweetsData2", 'w')
+        csvFile = open("tweetsData3", 'w')
         print("Created the cvs . . .", end=" ")
         csvWriter = csv.writer(csvFile)
         csvWriter.writerow(['text',
@@ -72,7 +72,7 @@ class StreamListener(StreamListener):
 
     def on_status(self, status):
         print("Collecting tweets . . .", end=" ")
-        csvFile = open("tweetsData2", 'a')
+        csvFile = open("tweetsData3", 'a')
         csvWriter = csv.writer(csvFile)
         if not 'RT @' in status.text:
             try:
@@ -151,5 +151,5 @@ def getTweets(hashtags):
         except:
             continue
 
-
-#getTweets(hashtags)
+print(hashTagsDatabase)
+getTweets(hashTagsDatabase)

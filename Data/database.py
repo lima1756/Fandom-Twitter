@@ -68,6 +68,3 @@ def createTag(tagname):
 def mainDatabase():
     # CREATE TABLE IN CASE IT DOESN'T EXIST
     create_table()  
-
-a = obtainHashTags()
-print(a)
